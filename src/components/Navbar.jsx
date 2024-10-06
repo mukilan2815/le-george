@@ -19,7 +19,7 @@ const Navbar = ({ onCategoryClick }) => {
 
           <ul className="hidden md:flex space-x-6 text-sm">
             <li>
-              <a href="/home" className="hover:text-gray-600">
+              <a href="/" className="hover:text-gray-600">
                 Home
               </a>
             </li>
