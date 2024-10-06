@@ -1,8 +1,16 @@
 import React from "react";
 import { Search, User, ShoppingBag } from "lucide-react";
 import logo from "../Assets/logos/dark_red_logo.jpg";
+import { useNavigate } from "react-router-dom";
 
-const Navbar = () => {
+const Navbar = ({ onCategoryClick }) => {
+  const navigate = useNavigate();
+
+  const handleCategoryClick = (category) => {
+    onCategoryClick(category);
+    navigate("/products");
+  };
+
   return (
     <nav className="bg-white shadow-sm">
       <div className="container mx-auto px-4 py-3">
@@ -16,14 +24,20 @@ const Navbar = () => {
               </a>
             </li>
             <li>
-              <a href="/oversized-tshirt" className="hover:text-gray-600">
+              <button
+                onClick={() => handleCategoryClick("Oversized Tshirt")}
+                className="hover:text-gray-600"
+              >
                 Oversized Tshirt
-              </a>
+              </button>
             </li>
             <li>
-              <a href="/posters" className="hover:text-gray-600">
+              <button
+                onClick={() => handleCategoryClick("Posters")}
+                className="hover:text-gray-600"
+              >
                 Posters
-              </a>
+              </button>
             </li>
             <li>
               <a
